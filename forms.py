@@ -4,6 +4,9 @@ from wtforms import StringField, SelectField, SelectMultipleField, DateTimeField
 from wtforms.validators import DataRequired, AnyOf, URL
 
 class ShowForm(Form):
+    name = StringField(
+        'name', validators=[DataRequired()]
+    )
     artist_id = StringField(
         'artist_id'
     )
@@ -14,6 +17,9 @@ class ShowForm(Form):
         'start_time',
         validators=[DataRequired()],
         default= datetime.today()
+    )
+    image_link = StringField(
+        'image_link'
     )
 
 class VenueForm(Form):
